@@ -1,5 +1,6 @@
+package dk.vetterlain;
 
-import entity.Result;
+import dk.vetterlain.entity.Result;
 import io.javalin.Javalin;
 import io.javalin.core.plugin.Plugin;
 import io.javalin.http.Context;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-import static utils.BaroUtils.requestsPerX;
+import static dk.vetterlain.utils.BaroUtils.requestsPerX;
 
 public class Barometer implements Plugin {
 
@@ -27,12 +28,12 @@ public class Barometer implements Plugin {
         globalQueue.add(Instant.now());
     }
 
-    public static void handle(Context context) {
+    public static Result getData() {
         List<Instant> copyList = globalQueue.stream().toList();
         float perSecond = requestsPerX(1, copyList);
         float perMinute = requestsPerX(60, copyList) / 60;
         float perHour = (requestsPerX(60 * 60, copyList) / 60) / 60;
-        context.json(new Result(copyList.size(), perSecond, perMinute, perHour));
+        return new Result(copyList.size(), perSecond, perMinute, perHour);
     }
 
 

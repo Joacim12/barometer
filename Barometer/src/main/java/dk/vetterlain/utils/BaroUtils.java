@@ -1,4 +1,4 @@
-package utils;
+package dk.vetterlain.utils;
 
 import java.time.Duration;
 import java.time.Instant;

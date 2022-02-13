@@ -1,4 +1,4 @@
-package entity;
+package dk.vetterlain.entity;
 
 public record Result(
         float requests,
