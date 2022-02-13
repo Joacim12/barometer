@@ -1,0 +1,35 @@
+name: BuildDemoAPI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ build ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build_gw:
+    # The type of runner that the job will run on
+    runs-on: [ barometer ]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build the Docker image
+        run: docker build . --file dockerfile --tag api
+
+      - name: stop any existing container
+        run: docker stop api || true && docker rm api || true
+
+      - name: prune old containers
+        run: docker image prune -f
+
+      - name: Run the Docker image
+        run: docker run -it -d -p 7000:7000 --name api -t api:latest
