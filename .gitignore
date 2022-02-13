@@ -27,3 +27,4 @@ demo/.idea*
 demo/node_modules*
 demo/package-lock.json
 demo/build*
+demo/api/.idea*
