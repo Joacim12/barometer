@@ -28,7 +28,7 @@ public class Barometer implements Plugin {
         globalQueue.add(Instant.now());
     }
 
-    public static Result getData() {
+    public Result getData() {
         List<Instant> copyList = globalQueue.stream().toList();
         float perSecond = requestsPerX(1, copyList);
         float perMinute = requestsPerX(60, copyList) / 60;
