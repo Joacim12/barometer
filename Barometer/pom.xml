@@ -22,8 +22,8 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>GitHub Joacim12 Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/Joacim12/barometer</url>
+            <name>GitHub JoacimV Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/JoacimV/barometer</url>
         </repository>
     </distributionManagement>
 

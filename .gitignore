@@ -25,3 +25,5 @@ Barometer/.idea*
 Barometer/target/*
 demo/.idea*
 demo/node_modules*
+demo/package-lock.json
+demo/build*
