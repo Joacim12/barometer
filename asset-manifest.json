@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/barometer/static/css/main.7bb36819.css",
+    "main.js": "/barometer/static/js/main.a7fbad0d.js",
+    "static/js/787.f055211e.chunk.js": "/barometer/static/js/787.f055211e.chunk.js",
+    "index.html": "/barometer/index.html",
+    "main.7bb36819.css.map": "/barometer/static/css/main.7bb36819.css.map",
+    "main.a7fbad0d.js.map": "/barometer/static/js/main.a7fbad0d.js.map",
+    "787.f055211e.chunk.js.map": "/barometer/static/js/787.f055211e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7bb36819.css",
+    "static/js/main.a7fbad0d.js"
+  ]
+}
